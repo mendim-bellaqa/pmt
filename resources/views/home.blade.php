@@ -49,6 +49,8 @@
             <div class="bg-white shadow-lg rounded-lg p-4">
               <h3 class="font-bold text-xl text-black mb-2">{{ $project->name }}</h3>
               <p class="font-serif text-gray-700">{{ $project->description }}</p>
+              <a href="{{ route('projects.show', ['project' => $project]) }}"><button class="btn btn-primary">Join</button></a>
+
             </div>
           @endforeach
         </div>

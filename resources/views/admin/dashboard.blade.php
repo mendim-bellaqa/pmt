@@ -49,6 +49,10 @@
                         @method('DELETE')
                         <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
                     </form>
+                    @if(auth()->user()->role == 'admin')
+                        <a href="{{ route('tasks.create', $project->id) }}" class="btn btn-primary">Add Task</a>
+                    @endif
+
                 </td>
 
                 <template>
