@@ -28,6 +28,41 @@
         </button>
         </a>
       </div>
+
+      <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 py-10">
+      <h1 class="text-4xl font-bold text-black  mb-8">All Projects</h1>
+
+      @if(session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Success!</strong>
+          <span class="block sm:inline">{{ session('success') }}</span>
+          <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 5.652a.5.5 0 01.708 0l4.242 4.243a.5.5 0 010 .707l-4.242 4.243a.5.5 0 01-.708-.707l3.536-3.536-3.536-3.536a.5.5 0 010-.707zM5.652 5.652a.5.5 0 00-.708 0L.702 9.895a.5.5 0 000 .707l4.242 4.243a.5.5 0 00.708-.707L1.707 10l3.536-3.536a.5.5 0 000-.707z"/></svg>
+          </span>
+        </div>
+      @endif
+
+
+        <div class="grid grid-cols-3 gap-4">
+          @foreach($projects as $project)
+            <div class="bg-white shadow-lg rounded-lg p-4">
+              <h3 class="font-bold text-xl text-black mb-2">{{ $project->name }}</h3>
+              <p class="font-serif text-gray-700">{{ $project->description }}</p>
+            </div>
+          @endforeach
+        </div>
+
+
+
+              </div>
+              </section>
+              <!-- Load Vue and other scripts -->
+              <script src="{{ mix('js/app.js') }}"></script>
+
+
+
+
       <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
           <div class="flex flex-wrap justify-center gap-8">
